@@ -1,9 +1,43 @@
 const revealTargets = document.querySelectorAll('.reveal');
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
 
 const SHEET_CONFIG = {
   spreadsheetId: '1EuOCA-GcGV1aFwXUV10_kIvvHnZzxFb-Dz9nv4IJRZw',
   gid: '234732728',
 };
+
+function setMobileNavState(isOpen) {
+  if (!navToggle || !navLinks) {
+    return;
+  }
+
+  navToggle.setAttribute('aria-expanded', String(isOpen));
+  navLinks.classList.toggle('is-open', isOpen);
+}
+
+function initialiseMobileNav() {
+  if (!navToggle || !navLinks) {
+    return;
+  }
+
+  navToggle.addEventListener('click', () => {
+    const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+    setMobileNavState(!isOpen);
+  });
+
+  navLinks.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      setMobileNavState(false);
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 760) {
+      setMobileNavState(false);
+    }
+  });
+}
 
 let renderedJewels = [];
 
@@ -330,6 +364,7 @@ function renderCatalogue(products) {
 }
 
 initialiseQuickViewInteractions();
+initialiseMobileNav();
 
 async function initialiseCatalogue() {
   try {
