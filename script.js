@@ -20,6 +20,7 @@ const quickViewElements = {
   title: document.getElementById('quickview-title'),
   description: document.getElementById('quickview-description'),
   price: document.getElementById('quickview-price'),
+  actions: document.getElementById('quickview-actions'),
   thumbs: document.getElementById('quickview-thumbs'),
 };
 
@@ -102,6 +103,11 @@ function renderQuickView() {
   quickViewElements.title.textContent = product.product_name || 'Product details';
   quickViewElements.description.textContent = product.short_description || 'No description available yet.';
   quickViewElements.price.textContent = formatPrice(product);
+
+  const videos = getProductVideos(product);
+  quickViewElements.actions.innerHTML = videos[0]
+    ? `<a class="button button-small button-video" href="${videos[0]}" target="_blank" rel="noreferrer">Watch product video</a>`
+    : '';
 
   quickViewElements.thumbs.innerHTML = images
     .map((url, index) => {
