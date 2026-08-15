@@ -25,6 +25,7 @@
       <nav class="nav-links" aria-label="Primary">
         <a href="#collections">Collections</a>
         <a href="#categories">Categories</a>
+        <a href="#catalogue">Catalogue</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -124,6 +125,24 @@
         </div>
       </section>
 
+      <section id="catalogue" class="section reveal delay-2">
+        <div class="section-heading">
+          <p class="eyebrow">Catalogue</p>
+          <h2>Product cards can now be driven by the same model as your Google Sheet.</h2>
+          <p class="catalogue-intro">
+            This catalogue is live-wired to your Google Sheet. Update the sheet and Drive media links, then refresh to see changes.
+          </p>
+        </div>
+        <div class="catalogue-toolbar">
+          <div>
+            <p class="catalogue-label">Current category</p>
+            <h3>Jewels</h3>
+          </div>
+          <p class="catalogue-note">Each product supports `image_url`, price, availability, WhatsApp message, and sort order.</p>
+        </div>
+        <div id="product-groups" class="product-groups" aria-live="polite"></div>
+      </section>
+
       <section id="about" class="story reveal delay-1">
         <div>
           <p class="eyebrow">About</p>
@@ -153,6 +172,29 @@
       <p>fashions.maaworld.in</p>
     </footer>
 
+    <div id="product-quickview" class="quickview" hidden>
+      <div class="quickview-backdrop" data-quickview-close></div>
+      <section class="quickview-dialog" role="dialog" aria-modal="true" aria-labelledby="quickview-title">
+        <button class="quickview-close" type="button" aria-label="Close product view" data-quickview-close>×</button>
+        <div class="quickview-media-shell">
+          <button class="quickview-nav quickview-nav-prev" type="button" aria-label="Previous image" data-quickview-prev>‹</button>
+          <img id="quickview-image" class="quickview-image" src="" alt="" />
+          <button class="quickview-nav quickview-nav-next" type="button" aria-label="Next image" data-quickview-next>›</button>
+        </div>
+        <div class="quickview-content">
+          <div class="quickview-meta-row">
+            <span id="quickview-category" class="collection-tag"></span>
+            <span id="quickview-availability" class="availability"></span>
+          </div>
+          <h3 id="quickview-title"></h3>
+          <p id="quickview-description"></p>
+          <strong id="quickview-price" class="quickview-price"></strong>
+          <div id="quickview-thumbs" class="quickview-thumbs" aria-label="Product images"></div>
+        </div>
+      </section>
+    </div>
+
+    <script src="data/products.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
