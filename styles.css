@@ -98,6 +98,17 @@ main {
   padding: 22px 0 10px;
 }
 
+.nav-toggle {
+  display: none;
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(110, 52, 94, 0.22);
+  color: var(--plum);
+  background: rgba(255, 255, 255, 0.7);
+  font-weight: 700;
+}
+
 .brand-lockup {
   display: flex;
   align-items: center;
@@ -139,8 +150,18 @@ main {
   font-weight: 600;
 }
 
+.nav-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 10px;
+  border-radius: 10px;
+}
+
 .nav-links a:hover {
   color: var(--berry);
+  background: rgba(255, 255, 255, 0.62);
 }
 
 .hero {
@@ -758,7 +779,7 @@ main {
 }
 
 .button-small {
-  min-height: 42px;
+  min-height: 44px;
   padding: 0 14px;
 }
 
@@ -834,6 +855,75 @@ main {
   }
 }
 
+@media (max-width: 760px) {
+  .topbar {
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .brand-lockup {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(110, 52, 94, 0.14);
+    border-radius: 14px;
+    background: rgba(255, 250, 246, 0.92);
+    box-shadow: var(--shadow);
+  }
+
+  .nav-links.is-open {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .nav-links a {
+    justify-content: flex-start;
+    padding: 0 12px;
+  }
+
+  .hero {
+    padding-top: 26px;
+    gap: 20px;
+  }
+
+  .lead {
+    margin-top: 16px;
+    line-height: 1.7;
+  }
+
+  .hero-actions,
+  .contact-actions {
+    width: 100%;
+  }
+
+  .hero-actions .button,
+  .contact-actions .button {
+    flex: 1 1 100%;
+  }
+
+  .section {
+    padding-top: 54px;
+  }
+
+  .quickview-nav {
+    width: 48px;
+    height: 48px;
+  }
+}
+
 @media (max-width: 640px) {
   main,
   .topbar,
@@ -842,8 +932,8 @@ main {
   }
 
   .topbar {
-    align-items: flex-start;
-    flex-direction: column;
+    align-items: center;
+    flex-direction: row;
   }
 
   .hero-copy h1 {
@@ -861,6 +951,11 @@ main {
   .category-panel,
   .catalogue-toolbar {
     padding: 22px;
+  }
+
+  .story,
+  .contact {
+    gap: 16px;
   }
 
   .catalogue-toolbar,
