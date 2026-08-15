@@ -667,6 +667,19 @@ main {
   font-size: 1.2rem;
 }
 
+.quickview-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.button-video {
+  background: rgba(255, 255, 255, 0.74);
+  color: var(--plum);
+  border-color: rgba(110, 52, 94, 0.28);
+}
+
 .quickview-thumbs {
   display: flex;
   gap: 8px;
