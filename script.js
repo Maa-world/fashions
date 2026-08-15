@@ -115,6 +115,38 @@ function formatPrice(product) {
   }).format(Number(product.price));
 }
 
+function buildProductEnquiryMessage(product, primaryImageUrl, primaryVideoUrl) {
+  const pageUrl = window.location.protocol === 'file:'
+    ? 'https://fashions.maaworld.in/#catalogue'
+    : `${window.location.href.split('#')[0]}#catalogue`;
+  const categoryLabel = product.subcategory ? `${product.category} / ${product.subcategory}` : product.category;
+  const customNote = String(product.whatsapp_message || '').trim();
+
+  const lines = [
+    'Hi Maa World team,',
+    'I would like to enquire about this product:',
+    `Product ID: ${product.id || 'N/A'}`,
+    `Name: ${product.product_name || 'N/A'}`,
+    `Category: ${categoryLabel || 'N/A'}`,
+    `Price: ${formatPrice(product)}`,
+    `Product link: ${pageUrl}`,
+  ];
+
+  if (primaryImageUrl) {
+    lines.push(`Image reference: ${primaryImageUrl}`);
+  }
+
+  if (primaryVideoUrl) {
+    lines.push(`Video reference: ${primaryVideoUrl}`);
+  }
+
+  if (customNote && !customNote.toLowerCase().includes('i want details')) {
+    lines.push(`Additional note: ${customNote}`);
+  }
+
+  return lines.join('\n');
+}
+
 function renderQuickView() {
   const product = renderedJewels[quickViewState.productIndex];
   if (!product || !quickViewElements.shell) {
@@ -312,13 +344,13 @@ function renderCatalogue(products) {
           const images = getProductImages(product);
           const imageSrc = images[0] || createFallbackImage(product);
           const price = formatPrice(product);
-          const message = encodeURIComponent(product.whatsapp_message || `Hi, I want details for ${product.product_name}`);
           const thumbs = images.slice(1).map((url, index) => `
             <button class="product-thumb-trigger" type="button" data-open-quickview data-product-index="${product._catalogueIndex}" data-image-index="${index + 1}" aria-label="Open ${product.product_name} image ${index + 2}">
               <img class="product-thumb" src="${url}" alt="${product.product_name} view ${index + 2}" loading="lazy" />
             </button>
           `).join('');
           const videos = getProductVideos(product);
+          const message = encodeURIComponent(buildProductEnquiryMessage(product, imageSrc, videos[0]));
           const videoCta = videos[0]
             ? `<a class="button button-outline button-small" href="${videos[0]}" target="_blank" rel="noreferrer">Watch video</a>`
             : '';
