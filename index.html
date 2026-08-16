@@ -11,41 +11,37 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="backdrop backdrop-a"></div>
-    <div class="backdrop backdrop-b"></div>
-
     <header class="topbar">
       <div class="brand-lockup">
         <div class="brand-mark">F</div>
         <div>
-          <p class="eyebrow">Fashions</p>
-          <p class="brand-subtitle">Sarees • Jewellery • Maa World</p>
+          <p class="eyebrow">Maa FASHIONS</p>
+          <p class="brand-subtitle">Jewellery • Sarees • Daily Wearabled</p>
         </div>
       </div>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
         Menu
       </button>
       <nav id="primary-nav" class="nav-links" aria-label="Primary">
-        <a href="#collections">Collections</a>
-        <a href="#categories">Categories</a>
+        <a href="#home">Home</a>
+        <a href="#offerings">Our Offerings</a>
         <a href="#catalogue">Catalogue</a>
-        <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
 
     <main>
-      <section class="hero">
+      <section id="home" class="hero">
         <div class="hero-copy reveal">
-          <p class="pill">A feminine fashion destination under Maa World</p>
-          <h1>Jewellery and sarees designed for grace, celebration, and everyday elegance.</h1>
+          <p class="pill">Fashions by Maa World</p>
+          <h1>Thoughtfully chosen jewellery and sarees for everyday elegance.</h1>
           <p class="lead">
-            Fashions is the flagship business under Maa World, focused on ladies' jewellery and sarees with a warm,
-            festive, and premium feel. The first launch highlights statement jewels and timeless drapes for women and girls.
+            Fashions is a women-focused initiative under Maa World, bringing curated jewellery and sarees with a warm,
+            festive, and personal touch for every occasion.
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#collections">View collections</a>
-            <a class="button button-secondary" href="https://wa.me/919059810708" target="_blank" rel="noreferrer">WhatsApp us</a>
+            <a class="button button-primary" href="#offerings">View offerings</a>
+            <a class="button button-secondary" href="https://wa.me/919059810708" target="_blank" rel="noreferrer">Message on WhatsApp</a>
           </div>
           <ul class="hero-points">
             <li>1gm gold finish favourites</li>
@@ -53,77 +49,28 @@
             <li>Sarees for festive and elegant dressing</li>
           </ul>
         </div>
-
-        <aside class="hero-card reveal delay-1" aria-label="Featured fashion preview">
-          <div class="card-frame">
-            <div class="orbit orbit-1"></div>
-            <div class="orbit orbit-2"></div>
-            <div class="feature-block feature-block-main">
-              <p>Featured pairing</p>
-              <h2>Jadau sparkle with rich saree styling</h2>
-              <span>Festive dressing • Elegant gifting • Signature styling</span>
-            </div>
-            <div class="feature-grid">
-              <div>
-                <strong>01</strong>
-                <p>1gm Gold</p>
-              </div>
-              <div>
-                <strong>02</strong>
-                <p>Jadau</p>
-              </div>
-              <div>
-                <strong>03</strong>
-                <p>Sarees</p>
-              </div>
-            </div>
-          </div>
-        </aside>
       </section>
 
-      <section id="collections" class="section reveal">
+      <section id="offerings" class="section reveal">
         <div class="section-heading">
-          <p class="eyebrow">Collections</p>
-          <h2>Curated collections for women who want timeless beauty.</h2>
+          <p class="eyebrow">Our Offerings</p>
+          <h2>Simple categories, thoughtfully curated for your needs.</h2>
         </div>
         <div class="collection-grid">
           <article class="collection-card">
-            <p class="collection-tag">Jewels</p>
-            <h3>Elegant sets, everyday shine, and occasion-ready pieces</h3>
-            <p>Jewellery designed to elevate both simple looks and festive styling with a soft luxurious finish.</p>
+            <p class="collection-tag">Jewellery</p>
+            <h3>Elegant sets for everyday and festive styling</h3>
+            <p>Curated pieces across 1gm gold, Jadau, and pearls with a balance of quality and individuality.</p>
           </article>
           <article class="collection-card">
             <p class="collection-tag">Sarees</p>
-            <h3>Graceful drapes for celebrations, gifting, and personal style</h3>
-            <p>Focused saree selections that pair beautifully with the jewellery collections and festive wardrobes.</p>
+            <h3>Graceful drapes for celebrations and gifting</h3>
+            <p>Selected sarees that pair beautifully with jewellery collections and occasion-led wardrobes.</p>
           </article>
           <article class="collection-card">
-            <p class="collection-tag">Style support</p>
-            <h3>Personal guidance for pairing jewellery and sarees</h3>
-            <p>Simple WhatsApp-led ordering with help on matching looks, gifting, and occasion styling.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="categories" class="section reveal delay-1">
-        <div class="section-heading">
-          <p class="eyebrow">Categories</p>
-          <h2>Start with one clear jewellery category and strong sub-categories beneath it.</h2>
-        </div>
-        <div class="category-shell">
-          <article class="category-panel category-panel-featured">
-            <p class="collection-tag">Jewels</p>
-            <h3>Main category with three launch sub-categories</h3>
-            <ul class="category-list">
-              <li>1gm gold</li>
-              <li>Jadau collection</li>
-              <li>Pearls &amp; Beads</li>
-            </ul>
-          </article>
-          <article class="category-panel">
-            <p class="collection-tag">Structure</p>
-            <h3>Make navigation simple for first-time customers</h3>
-            <p>Customers first enter through Jewels, then browse by 1gm gold, Jadau collection, and Pearls &amp; Beads.</p>
+            <p class="collection-tag">Personal support</p>
+            <h3>Guidance for matching looks and placing orders</h3>
+            <p>Simple WhatsApp-led support for availability, gifting requests, and first-time styling help.</p>
           </article>
         </div>
       </section>
@@ -146,21 +93,10 @@
         <div id="product-groups" class="product-groups" aria-live="polite"></div>
       </section>
 
-      <section id="about" class="story reveal delay-1">
-        <div>
-          <p class="eyebrow">About</p>
-          <h2>Fashions is the flagship women-focused business under Maa World.</h2>
-        </div>
-        <p>
-          This sub-brand focuses on the categories you are launching first: jewellery and sarees. It sits under
-          Maa World with its own feminine visual identity, product categories, and future-ready catalogue structure.
-        </p>
-      </section>
-
       <section id="contact" class="contact reveal delay-2">
         <div>
           <p class="eyebrow">Contact</p>
-          <h2>Start your first customer conversations with warmth and style support.</h2>
+          <h2>Connect with us for product enquiries and orders.</h2>
           <p>Use WhatsApp for jewellery enquiries, saree availability, styling questions, gifting requests, and first orders.</p>
         </div>
         <div class="contact-actions">
